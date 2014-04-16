@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<project name="siis" basedir="." default="lint">
+
+<tstamp/>
+
+<property file="./build.properties" />
+<!--
+<target name="migrate" description="database migrations">
+    <taskdef name="dbdeploy" classname="phing.tasks.ext.dbdeploy.DbDeployTask"/>
+
+    <property name="build.dbdeploy.deployfile" value="${build.dir}/sql/deploy-${DSTAMP}${TSTAMP}.sql" />
+    <property name="build.dbdeploy.undofile" value="${build.dir}/sql/undo-${DSTAMP}${TSTAMP}.sql" />
+
+    <dbdeploy
+        url="mysql:host=${db.host};dbname=${db.name}"
+        userid="${db.user}"
+        password="${db.pass}"
+        dir="${build.dir}/sql"
+        outputfile="${build.dir}/${build.dbdeploy.deployfile}"
+        undooutputfile="${build.dir}/${build.dbdeploy.undofile}" />
+
+    <exec
+        command="${progs.mysql} -h${db.host} -u${db.user} -p${db.pass} ${db.name} &lt; ${build.dbdeploy.deployfile}"
+        dir="."
+        checkreturn="true" />
+</target>
+-->
+<target name="lint" depends="delete_cache" >
+   <phplint haltonfailure="true" deprecatedAsError="true" cachefile="true">
+      <fileset dir="${build.dir}">
+         <include name="*.php" />
+         <include name="**/*.php" />
+      </fileset>
+   </phplint>
+</target>
+
+<fileset dir="${build.dir}" id="delete_cache_files">
+  <include name="cache/templates_c/default/*.php" />
+</fileset>
+
+<target name="delete_cache">
+  <delete>
+    <fileset refid="delete_cache_files" />
+  </delete>
+</target>
+
+<target name="mercurial" depends="lint">
+	<exec command="hg commit -m '${msg}' " dir="../" escape="false" />
+</target>
+
+
+</project>
+
