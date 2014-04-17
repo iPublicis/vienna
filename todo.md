@@ -1,5 +1,4 @@
-todo
-======
+# to do
 
 - [ ] add autoloader for core classes
 - [ ] create simple solution for the loading of module views
