@@ -22,7 +22,7 @@ if($parent_admit) $sTitleNr= ($_SESSION['sess_full_en']);
 
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',"$page_title ($sTitleNr)");
-$smarty->assign('LDBack', $LDBack);
+ $smarty->assign('LDBack', $LDBack);
  $smarty->assign('LDHelp', $LDHelp);
  $smarty->assign('LDClose', $LDClose);
  

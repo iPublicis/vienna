@@ -446,7 +446,7 @@ class GuiSearchPerson {
 					# Generate the row in buffer and append as string
 					#
 					ob_start();
-						$this->smarty->display('registration_admission/reg_search_list_row.tpl');
+						$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_search_list_row.tpl');
 						$sTemp = $sTemp.ob_get_contents();
 					ob_end_clean();
 				}

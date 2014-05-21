@@ -131,7 +131,7 @@ if($parent_admit) {
 }else{
 	$tab_bot_line='#66ee66';
 	include('./gui_bridge/default/gui_tabs_patreg.php');
-	$smarty->assign('sTabsFile','registration_admission/reg_tabs.tpl');
+	$smarty->assign('sTabsFile',CARE_BASE .'modules/' . MODULE . '/view/reg_tabs.tpl');
 	$smarty->assign('sClassItem','class="reg_item"');
 	$smarty->assign('sClassInput','class="reg_input"');
 }

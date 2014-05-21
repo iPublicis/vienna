@@ -133,7 +133,7 @@ class GuiPersonShow {
 			$this->smarty->assign('sItem',$sBuffer);
 			$this->smarty->assign('sColSpan2',"colspan=$colspan");
 			$this->smarty->assign('sInput',$input_val);
-			$this->smarty->display('registration_admission/reg_row.tpl');
+			$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_row.tpl');
 			$sBuffer = ob_get_contents();
 		ob_end_clean();
 
@@ -438,8 +438,8 @@ class GuiPersonShow {
 		if(empty($modify_id)) $buffer=$create_id; else $buffer=$modify_id;
 
 		$this->smarty->assign('sRegByInput',$buffer);
-
 		}else{
+			$this->smarty = new smarty_care('common',FALSE);
 			$this->smarty->assign('pretext','Invalid PID number or the data is not available from the databank! Please report this to <a  href="mailto:info@care2x.org">info@care2x.org</a>. Thank you.');
 		}
 		
@@ -447,12 +447,12 @@ class GuiPersonShow {
 		# If data is to be returned only, buffer output, get the buffer contents, end and clean buffer and return contents.
 		if($this->bReturnOnly){
 			ob_start();
-				$this->smarty->display('registration_admission/reg_form.tpl');
+				$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_form.tpl');
 			$sTemp = ob_get_contents();
 			ob_end_clean();
 			return $sTemp;
 		}else{
-			$this->smarty->display('registration_admission/reg_form.tpl');
+			$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_form.tpl');
 			return TRUE;
 		}
 	} // end of function
