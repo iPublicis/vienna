@@ -15,10 +15,10 @@
 			<tbody>
 				<tr valign="top">
 					<td>
-						{{include file="registration_admission/basic_data.tpl"}}
+						{{include file="basic_data.tpl"}}
 						
 						{{if $bShowNoRecord}}
-							{{include file="registration_admission/common_norecord.tpl"}}
+							{{include file="common_norecord.tpl"}}
 						{{/if}}
 
 						{{$sOptionBlock}}

@@ -1,7 +1,7 @@
 <table width="100%" cellspacing="0" cellpadding="0">
   <tbody>
     <tr>
-      <td>{{include file="registration_admission/admit_tabs.tpl"}}</td>
+      <td>{{include file="admit_tabs.tpl"}}</td>
     </tr>
 	<tr>
       <td>
@@ -31,7 +31,7 @@
 			<table border=0 width="650" cellspacing="0" cellpadding="0">
 				<tr>
 					<td valign="bottom">
-						{{include file="registration_admission/admit_form.tpl"}} {{* $sAdmitForm *}}
+						{{include file="admit_form.tpl"}} {{* $sAdmitForm *}}
 					</td>
 				</tr>
 			</table>

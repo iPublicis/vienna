@@ -214,7 +214,7 @@ $smarty->assign('sBottomControls',$sTemp);
 $smarty->assign('pbBottomClose','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'close2.gif','0').'  title="'.$LDCancel.'"  align="absmiddle"></a>');
 
 
-$smarty->assign('sMainBlockIncludeFile','registration_admission/common_option.tpl');
+$smarty->assign('sMainBlockIncludeFile','common_option.tpl');
 
 
 $smarty->display(CARE_BASE . 'main/view/mainframe.tpl');
