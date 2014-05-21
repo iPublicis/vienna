@@ -1,5 +1,4 @@
 <?php
-
 # Resolve href for return button
 
 if(isset($_SESSION['sess_file_return'])&&!empty($_SESSION['sess_file_return']))
@@ -285,34 +284,35 @@ if($mode=='show'){
 	$smarty->assign('bShowEntryForm',TRUE);
 	$smarty->assign('bSetAsForm',TRUE);
 	
+	
 	# collect Javascript for the form
 
 	ob_start();
 
-?>
-<script language="JavaScript">
-<!-- Script Begin
-function chkform(d) {
-	if(d.date.value==""){
-		alert("<?php echo $LDPlsEnterDate; ?>");
-		d.date.focus();
-		return false;
-	}else if(d.notes.value==""){
-		alert("<?php echo $LDPlsEnterReport; ?>");
-		d.notes.focus();
-		return false;
-	}else if(d.staff_name.value==""){
-		alert("<?php echo $LDPlsEnterFullName; ?>");
-		d.staff_name.focus();
-		return false;
-	}else{
-		return true;
+	?>
+	<script language="JavaScript">
+	<!-- Script Begin
+	function chkform(d) {
+		if(d.date.value==""){
+			alert("<?php echo $LDPlsEnterDate; ?>");
+			d.date.focus();
+			return false;
+		}else if(d.notes.value==""){
+			alert("<?php echo $LDPlsEnterReport; ?>");
+			d.notes.focus();
+			return false;
+		}else if(d.staff_name.value==""){
+			alert("<?php echo $LDPlsEnterFullName; ?>");
+			d.staff_name.focus();
+			return false;
+		}else{
+			return true;
+		}
 	}
-}
-//  Script End -->
-</script>
+	//  Script End -->
+	</script>
 
-<?
+	<?php
 
 	$sTemp = ob_get_contents();
 	ob_end_clean();
@@ -333,17 +333,17 @@ function chkform(d) {
 	$smarty->assign('sAuthorInput','<input type="text" name="staff_name" size=50 maxlength=60 value="'.$_SESSION['sess_user_name'].'" readonly>');
 
 
-$sTemp = '<input type="hidden" name="encounter_nr" value="'.$_SESSION['sess_en'].'">
-<input type="hidden" name="pid" value="'.$_SESSION['sess_pid'].'">
-<input type="hidden" name="modify_id" value="'.$_SESSION['sess_user_name'].'">
-<input type="hidden" name="create_id" value="'.$_SESSION['sess_user_name'].'">
-<input type="hidden" name="create_time" value="null">
-<input type="hidden" name="mode" value="create">
-<input type="hidden" name="staff_nr">
-<input type="hidden" name="send_to_pid">
-<input type="hidden" name="type_nr" value="'.$type_nr.'">
-<input type="hidden" name="target" value="'.$target.'">
-<input type="hidden" name="history" value="Created: '.date('Y-m-d H:i:s').' : '.$_SESSION['sess_user_name']."\n".'">';
+	$sTemp = '<input type="hidden" name="encounter_nr" value="'.$_SESSION['sess_en'].'">
+	<input type="hidden" name="pid" value="'.$_SESSION['sess_pid'].'">
+	<input type="hidden" name="modify_id" value="'.$_SESSION['sess_user_name'].'">
+	<input type="hidden" name="create_id" value="'.$_SESSION['sess_user_name'].'">
+	<input type="hidden" name="create_time" value="null">
+	<input type="hidden" name="mode" value="create">
+	<input type="hidden" name="staff_nr">
+	<input type="hidden" name="send_to_pid">
+	<input type="hidden" name="type_nr" value="'.$type_nr.'">
+	<input type="hidden" name="target" value="'.$target.'">
+	<input type="hidden" name="history" value="Created: '.date('Y-m-d H:i:s').' : '.$_SESSION['sess_user_name']."\n".'">';
 
 	$smarty->assign('sHiddenInputs',$sTemp);
 
@@ -440,7 +440,7 @@ ob_start();
 								</TD>
 							</TR>
 <?php
-}
+						}
 ?>
 						</TBODY>
 						</TABLE>
@@ -480,7 +480,7 @@ $smarty->assign('sBottomControls',$sTemp);
 
 $smarty->assign('pbCancel','<a href="'.$returnfile.URL_APPEND.$buf.'&target='.$target.'&mode=show&type_nr='.$type_nr.'" class="button icon remove danger">Cancel and Close</a>');
 
-$smarty->assign('sMainBlockIncludeFile',__DIR__ . '/view/common_report.tpl');
+$smarty->assign('sMainBlockIncludeFile',__DIR__ . '/../../view/common_report.tpl');
 
 $smarty->display(CARE_BASE . 'main/view/mainframe.tpl');
 
