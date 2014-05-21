@@ -393,7 +393,7 @@ $smarty->assign('TP_DIS_CAT',$TP_DIS_CAT);
 $smarty->assign('TP_DISCAT_RADIOS',$TP_DISCAT_RADIOS);
 $smarty->assign('TP_DOCBY',$TP_DOCBY);
 $smarty->assign('TP_DBY',$TP_DBY);
-$smarty->display(__DIR__ . '/../../view/tp_input_show_birthdetail.tpl');
+$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_input_show_birthdetail.tpl');
 ?>
 
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">

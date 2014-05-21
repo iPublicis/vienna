@@ -236,5 +236,5 @@ $smarty->assign('TP_iconPDF',$TP_iconPDF);
 $smarty->assign('TP_PRINT_PDFDOC',$TP_PRINT_PDFDOC);
 $smarty->assign('TP_iconXPaper',$TP_iconXPaper);
 $smarty->assign('TP_xenc_BLK',$TP_xenc_BLK);
-$smarty->display('/../../view/tp_pat_admit_options.tpl');
+$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_pat_admit_options.tpl');
 ?>

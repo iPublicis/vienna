@@ -35,5 +35,5 @@ $smarty->assign('TP_TIME',$TP_TIME);
 $smarty->assign('TP_DOC',$TP_DOC);
 $smarty->assign('TP_USR',$TP_USR);
 $smarty->assign('TP_CLOSE',$TP_CLOSE);
-$smarty->display('/view/tp_show_notes_details.tpl');
+$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_show_notes_details.tpl');
 ?>

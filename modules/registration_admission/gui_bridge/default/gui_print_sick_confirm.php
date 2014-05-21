@@ -111,7 +111,7 @@ $smarty->assign('TP_dept_sigstamp',$TP_dept_sigstamp);
 $smarty->assign('LDInsurersCopy',$LDInsurersCopy);
 $smarty->assign('LDDiagnosis2',$LDDiagnosis2);
 $smarty->assign('TP_diagnosis',$TP_diagnosis);
-$smarty->display('/../../view/tp_show_sick_confirm.tpl');
+$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_show_sick_confirm.tpl');
 
 ?>
 <?php

@@ -265,7 +265,7 @@ if($mode=='show'){
 			}
 			# buffer the row and assign to array
 			ob_start();
-				$smarty->display('registration_admission/report_row.tpl');
+				$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/report_row.tpl');
 				$sRows = $sRows.ob_get_contents();
 			ob_end_clean();
 		}

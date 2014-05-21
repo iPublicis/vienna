@@ -113,7 +113,7 @@ if ($update || ($mode == "search")) {
 			}
 			# If display is forced
 			if ($bShowThisForm)
-				$smarty->display ( 'products/form.tpl' );
+				$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/form.tpl');
 		
 		} else {
 			echo "<p>" . str_replace ( "~nr~", $linecount, $LDFoundNrData ) . "<br>$LDClk2SeeInfo<p>";

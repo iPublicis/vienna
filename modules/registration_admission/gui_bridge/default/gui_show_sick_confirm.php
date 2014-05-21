@@ -109,7 +109,7 @@ $smarty->assign('TP_dept_sigstamp',$TP_dept_sigstamp);
 $smarty->assign('LDInsurersCopy',$LDInsurersCopy);
 $smarty->assign('LDDiagnosis2',$LDDiagnosis2);
 $smarty->assign('TP_diagnosis',$TP_diagnosis);
-$smarty->display('/../../view/tp_show_sick_confirm.tpl');
+$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_show_sick_confirm.tpl');
 # Show the print button
 echo '<a href="javascript:printForm(\''.$sickconfirm['nr'].'\')"><img '.createLDImgSrc($root_path,'printout.gif','0').'></a>';
 
@@ -141,7 +141,7 @@ if($rows>1){
 			$smarty->assign('LDDiagnosis2',$LDDiagnosis2);
 			$smarty->assign('TP_root_path',$TP_root_path);
 			$smarty->assign('LDDepartment',$LDDepartment);
-			$smarty->display(__DIR__ . '/../../view/tp_show_sick_confirm_tb_header.tpl');
+			$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_show_sick_confirm_tb_header.tpl');
 			eval("echo $TP_tb_header;");
 		}
 		# Prepare the confim date & diagnosis and href url and dept name
@@ -158,7 +158,7 @@ if($rows>1){
 			$smarty->assign('TP_href',$TP_href);
 			$smarty->assign('TP_diagnosis',$TP_diagnosis);
 			$smarty->assign('TP_dept_name',$TP_dept_name);
-			$smarty->display('/../../view/tp_show_sick_confirm_tb_row.tpl');
+			$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_show_sick_confirm_tb_row.tpl');
 		}
 		eval("echo $TP_tb_row;");
 	}

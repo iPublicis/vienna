@@ -368,7 +368,7 @@ if($mode=='search'||$mode=='paginate'){
 			# Generate the row in buffer and append as string
 			#
 			ob_start();
-				$smarty->display('registration_admission/admit_search_list_row.tpl');
+				$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/admit_search_list_row.tpl');
 				$sTemp = $sTemp.ob_get_contents();
 			ob_end_clean();
 		}

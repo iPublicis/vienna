@@ -63,7 +63,6 @@ if($parent_admit) include($root_path.'include/imgcreator/inc_js_barcode_wristban
 $sTemp = ob_get_contents();
 ob_end_clean();
 $smarty->append('JavaScript',$sTemp);
-echo MODULE .'/view/admit_tabs.tpl' . "====";exit();
 /* Load the tabs */
 if($parent_admit) {
 	$tab_bot_line='#66ee66';

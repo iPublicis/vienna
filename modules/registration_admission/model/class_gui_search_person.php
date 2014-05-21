@@ -469,13 +469,13 @@ class GuiSearchPerson {
 		#
 		if($this->bReturnOnly){
 			ob_start();
-				$this->smarty->display(__DIR__ . '/../view/reg_search_main.tpl');
+				$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_search_main.tpl');
 				$sTemp=ob_get_contents();
 			ob_end_clean();
 			return $sTemp;
 		}else{
 			# show Template
-			$this->smarty->display(__DIR__ . '/../view/reg_search_main.tpl');
+				$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_search_main.tpl');
 		}
 	} // end of function display()
 

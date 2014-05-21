@@ -306,7 +306,7 @@ $smarty->assign('TP_OUTCOME',$TP_OUTCOME);
 $smarty->assign('TP_OUT_RADIOS',$TP_OUT_RADIOS);
 $smarty->assign('TP_DOCBY',$TP_DOCBY);
 $smarty->assign('TP_DBY',$TP_DBY);
-$smarty->display('/../../view/tp_input_show_pregnancy.tpl');
+$smarty->display(CARE_BASE .'modules/' . MODULE . '/view/tp_input_show_pregnancy.tpl');
 
 ?>
  <input type="hidden" name="sid" value="<?php echo $sid; ?>">
