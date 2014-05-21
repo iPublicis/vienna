@@ -446,7 +446,7 @@ class GuiSearchPerson {
 					# Generate the row in buffer and append as string
 					#
 					ob_start();
-						$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_search_list_row.tpl');
+						$this->smarty->display_view('reg_search_list_row.tpl');
 						$sTemp = $sTemp.ob_get_contents();
 					ob_end_clean();
 				}
@@ -469,13 +469,13 @@ class GuiSearchPerson {
 		#
 		if($this->bReturnOnly){
 			ob_start();
-				$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_search_main.tpl');
+				$this->smarty->display_view('reg_search_main.tpl');
 				$sTemp=ob_get_contents();
 			ob_end_clean();
 			return $sTemp;
 		}else{
 			# show Template
-				$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_search_main.tpl');
+				$this->smarty->display_view('reg_search_main.tpl');
 		}
 	} // end of function display()
 

@@ -447,12 +447,12 @@ class GuiPersonShow {
 		# If data is to be returned only, buffer output, get the buffer contents, end and clean buffer and return contents.
 		if($this->bReturnOnly){
 			ob_start();
-				$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_form.tpl');
+				$this->smarty->display_view('reg_form.tpl');
 			$sTemp = ob_get_contents();
 			ob_end_clean();
 			return $sTemp;
 		}else{
-			$this->smarty->display(CARE_BASE .'modules/' . MODULE . '/view/reg_form.tpl');
+			$this->smarty->display_view('reg_form.tpl');
 			return TRUE;
 		}
 	} // end of function
