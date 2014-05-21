@@ -1,0 +1,15 @@
+cache/templates_c
+cache/cache
+cache/barcodes
+.settings/
+.buildpath
+.project
+.tags
+.tags_sorted_by_file
+gettext.sublime-project
+gettext.sublime-workspace
+uploads/logos_dept
+uploads/medstock
+uploads/pharma
+uploads/photos
+uploads/radiology
