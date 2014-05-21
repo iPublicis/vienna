@@ -90,19 +90,20 @@ class smarty_care extends Smarty {
 		$this->cfg = $cfg;
 		$this->lang = $lang;
 
-		// being called from a module or from the main ?
-		$module = MODULE != '' ? "modules/" : "";
-		$this->template_dir = MODULE != '' ? $this->sDocRoot . $module . MODULE . "/view/"
-										   : "";
-		$this->cache_dir = MODULE != '' ? $this->compile_dir . $module . MODULE . "/view/"
-										   : $this->compile_dir ;
-		
 		$this->compile_dir = $this->templateCache ;
 		$this->config_dir = $this->sDocRoot.'configs';
 		//$this->cache_dir = $this->compile_dir;//.'/cache';
+		$this->cache_dir = $this->compile_dir;
+		
+		
+		// being called from a module or from the main ?
+		$this->module = MODULE != '' ? MODULE : "modules/";
+		$this->template_dir = MODULE != '' ? $this->sDocRoot . "modules/" . $this->module . "/view/"
+										   : "";
+		
 
 		# For temporary debugging
-	    	if(0){
+	    if(0){
 			echo  "template dir : " . $this->template_dir."<p>";
 			echo  "compile dir : " .$this->compile_dir."<p>";
 			echo  "config dir : " .$this->config_dir."<p>";
@@ -112,7 +113,7 @@ class smarty_care extends Smarty {
 		/* global configs
 		*/
 
-		$this->debug = true;
+		$this->debugging = false;
 		//TODO : move this to a global configuration 
 		$this->caching = false;
 
@@ -215,6 +216,10 @@ class smarty_care extends Smarty {
 		return "<div class=\"copyright\">$sTemp</div>";
 	}
 
+	function display_view( $view ) {
+		return $this->display($this->root_path .'modules/' . $this->module . '/view/' . $view);
+	}
+	
 } // end class
 
 ?>
